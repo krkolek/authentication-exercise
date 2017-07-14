@@ -30,12 +30,15 @@ class UserManager(models.Manager):
 
 
 class User(AbstractBaseUser):
+    """
+    Simplified User class which store only username, password and join datetime.
+    """
     username = models.CharField(
         max_length=150, unique=True, validators=[ASCIIUsernameValidator()],
         help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.',
         error_messages={'unique': "A user with that username already exists."},
     )
-    date_joined = models.DateTimeField(auto_now_add=True)
+    join_datetime = models.DateTimeField(auto_now_add=True)
 
     objects = UserManager()
 

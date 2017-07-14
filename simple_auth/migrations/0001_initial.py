@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('password', models.CharField(max_length=128, verbose_name='password')),
                 ('username', models.CharField(error_messages={b'unique': b'A user with that username already exists.'}, help_text=b'Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.', max_length=150, unique=True, validators=[django.contrib.auth.validators.ASCIIUsernameValidator()])),
-                ('date_joined', models.DateTimeField(auto_now_add=True)),
+                ('join_datetime', models.DateTimeField(auto_now_add=True)),
             ],
             options={
                 'abstract': False,
