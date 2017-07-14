@@ -22,7 +22,10 @@ class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = ('token', 'username', 'password')
-        extra_kwargs = {'password': {'write_only': True}, 'username': {'write_only': True}}
+        extra_kwargs = {
+            'password': {'write_only': True},
+            'username': {'write_only': True}
+        }
 
 
 class LoginSerializer(AuthTokenSerializer):
